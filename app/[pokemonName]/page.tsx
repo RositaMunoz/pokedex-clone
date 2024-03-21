@@ -1,7 +1,8 @@
 import { getPokemonData } from "@/helpers/pokemonData"
-import { getStringIDfromID, uppercasedFirstLetter, getColorsType, translateTypes } from "@/helpers/globalFunctions"
+import { getStringIDfromID, uppercasedFirstLetter, translateTypes } from "@/helpers/globalFunctions"
 import { PokemonImage } from "@/components/pokemonImage"
 import Link from "next/link"
+import { PokemonTypes } from "@/components/pokemonTypes"
 
 export default async function PokemonPage({ params }: { params: { pokemonName: string }}) {
   const { pokemonName } = params
@@ -33,16 +34,7 @@ export default async function PokemonPage({ params }: { params: { pokemonName: s
           </div>
           <div>
             <div className="font-medium text-darker-gray text-lg pb-2">Tipo</div>
-            <div className="flex">
-              {pokemonData.types.map((type: string) => (
-                <div
-                  className={`${getColorsType(type)} rounded text-sm w-1/3 text-center mr-1`}
-                  key={type}
-                >
-                  {translateTypes(type)}
-                </div>
-              ))}
-            </div>
+            <PokemonTypes types={pokemonData.types} styles="text-sm py-1"/>
           </div>
         </div>
       </div>
