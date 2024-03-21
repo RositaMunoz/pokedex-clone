@@ -27,3 +27,52 @@ export const getPokemonImage = (id: number) => {
 export const uppercasedFirstLetter = (name: string) => {
   return name.charAt(0).toUpperCase() + name.slice(1)
 }
+
+export const translateTypes = (type: string) => {
+  const types = {
+    normal: "normal",
+    fire: "fuego",
+    fighting: "lucha",
+    water: "agua",
+    flying: "volador",
+    grass: "planta",
+    poison: "veneno",
+    electric: "eléctrico",
+    ground: "tierra",
+    psychic: "psíquico",
+    rock: "roca",
+    ice: "hielo",
+    bug: "bicho",
+    dragon: "dragón",
+    ghost: "fantasma",
+    dark: "siniestro",
+    steel: "acero",
+    fairy: "hada",
+  }
+  return uppercasedFirstLetter(types[type as keyof typeof types])
+}
+
+export const getColorsType = (type: string) => {
+  const colors = {
+    normal: "bg-normal",
+    fire: "bg-fire",
+    fighting: "bg-fighting",
+    water: "bg-water",
+    flying: "bg-flying",
+    grass: "bg-grass",
+    poison: "bg-poison",
+    electric: "bg-electric",
+    ground: "bg-ground",
+    psychic: "bg-psychic",
+    rock: "bg-rock",
+    ice: "bg-ice",
+    bug: "bg-bug",
+    dragon: "bg-dragon",
+    ghost: "bg-ghost",
+    dark: "bg-dark",
+    steel: "bg-steel",
+    fairy: "bg-fairy"
+  }
+  
+  return colors[type as keyof typeof colors]
+}

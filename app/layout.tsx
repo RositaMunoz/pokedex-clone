@@ -9,8 +9,16 @@ const flexo = localFont({
       weight: "400"
     },
     {
+      path: "../public/fonts/Flexo-Medium.ttf",
+      weight: "500"
+    },
+    {
       path: "../public/fonts/Flexo-Demi.ttf",
       weight: "600"
+    },
+    {
+      path: "../public/fonts/Flexo-Bold.ttf",
+      weight: "700"
     }
   ],
   variable: '--font-flexo'
@@ -30,10 +38,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${flexo.variable} font-sans`}>
         <main className="flex min-h-screen flex-col items-center justify-between bg-dark-background">
-          <div className="flex justify-center min-h-screen w-5/6 bg-white bg-light-background">
-            <div className="min-h-screen w-70 bg-white">
-              {children}
-            </div>
+          <div className="flex justify-center min-h-screen md:w-5/6 w-full bg-white bg-light-background">
+            {children}
           </div>
         </main>
       </body>
