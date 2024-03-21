@@ -10,25 +10,24 @@ export default async function PokemonPage({ params }: { params: { pokemonName: s
   const pokemonId = getStringIDfromID(pokemonData.id)
 
   return (
-    <div className="min-h-screen w-70 bg-white py-10">
-      <div className="flex justify-center mb-16">
-        <div className="text-darker-gray font-medium text-4xl mr-3">{uppercasedFirstLetter(pokemonName)}</div>
-        <div className="text-light-gray font-medium text-4xl">N.° {pokemonId}</div>
+    <div className="min-h-screen md:w-70 w-full bg-white py-10 px-5 md:px-0">
+      <div className="flex md:flex-row flex-col items-center justify-center mb-16">
+        <div className="text-darker-gray font-medium text-3xl md:text-4xl mr-3">{uppercasedFirstLetter(pokemonName)}</div>
+        <div className="text-light-gray font-medium text-3xl md:text-4xl">N.° {pokemonId}</div>
       </div>
       <div className="flex flex-col md:flex-row w-full px-5">
-        <div className="flex flex-col w-1/2">
+        <div className="flex flex-col w-full md:w-1/2 mb-6">
           <PokemonImage image={pokemonData.sprite}/>
-          <div></div>
         </div>
-        <div className="flex flex-col w-1/2 pl-6">
+        <div className="flex flex-col w-full md:w-1/2 md:pl-6">
           <div className="text-darker-gray text-lg font-medium pb-6">{pokemonData.description}.</div>
-          <div className="bg-button-blue flex rounded p-5 mb-6">
-            <div className="w-1/2">
-              <div className="font-medium text-sm pb-2">Altura</div>
+          <div className="bg-button-blue flex md:flex-row flex-col rounded p-5 mb-6">
+            <div className="w-full md:w-1/2 text-center md:text-left pb-5 mb:pb-0">
+              <div className="font-medium text-sm pb-1">Altura</div>
               <div className="text-darker-gray font-medium text-lg">{pokemonData.height} m</div>
             </div>
-            <div className="w-1/2">
-              <div className="font-medium text-sm pb-2">Peso</div>
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <div className="font-medium text-sm pb-1">Peso</div>
               <div className="text-darker-gray text-lg">{pokemonData.weight} g</div>
             </div>
           </div>
